@@ -1,0 +1,25 @@
+{
+  "name": "dsh-codex-oauth-ui",
+  "version": "0.1.2",
+  "private": false,
+  "type": "module",
+  "license": "MIT",
+  "repository": { "type": "git", "url": "git+https://github.com/WXYS1209/dsh-codex-oauth-ui.git" },
+  "homepage": "https://github.com/WXYS1209/dsh-codex-oauth-ui#readme",
+  "bugs": { "url": "https://github.com/WXYS1209/dsh-codex-oauth-ui/issues" },
+  "description": "User-controlled OAuth UI for DSH's built-in openai-codex provider",
+  "keywords": ["deepseek-harness", "dsh", "dsh-plugin", "openai-codex", "oauth", "codex"],
+  "engines": { "dsh": ">=0.2.2-rc.2 <0.3.0" },
+  "publishConfig": { "access": "public" },
+  "exports": { ".": "./index.js", "./client": "./client.js", "./locale/*.json": "./locale/*.json", "./icon": "./icon.svg" },
+  "files": ["index.js", "controller.js", "client.js", "cordis.patch.yml", "locale/*.json", "icon.svg", "README.md", "LICENSE"],
+  "scripts": {
+    "check": "node --check index.js && node --check controller.js && node --check client.js",
+    "test": "node --test",
+    "prepublishOnly": "npm run check && npm test"
+  },
+  "dsh": {
+    "bundle": { "patch": "./cordis.patch.yml" },
+    "client": { "platform": "web", "immediately": true, "inject": ["@deepseek-ai/dsh-client-ui-settings", "@deepseek-ai/dsh-client-locale"] }
+  }
+}

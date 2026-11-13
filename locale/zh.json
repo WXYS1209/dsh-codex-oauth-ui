@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Codex 授权",
+    "description": "通过浏览器或设备码登录内置 openai-codex 订阅供应商，不读取或导入外部 CLI 凭据。"
+  }
+}

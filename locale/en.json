@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Codex authorization",
+    "description": "Sign in to the built-in openai-codex subscription provider with browser or device-code authorization, without importing external CLI credentials."
+  }
+}
